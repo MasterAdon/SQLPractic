@@ -7,7 +7,6 @@ create table if not exists Musician (
 create table if not exists Album (
     id serial primary key,
     name varchar(100) not null,
-    id_Musician integer references Musician(id),
     data integer
 );
 
@@ -27,7 +26,6 @@ create table if not exists Collection (
     id serial primary key,
     data integer,
     name varchar(100) not null,
-    id_Track integer references Track(id)
 );
 
 create table if not exists Musician_Genre (
@@ -35,6 +33,20 @@ create table if not exists Musician_Genre (
     id_Genre integer references Genre(id),
     constraint pk primary key (id_Musician, id_Genre)
 );
+
+create table if not exists Musician_Album (
+    id serial primary key,
+    id_Musician integer not null references Musician(id),
+    id_Album integer not null references Album(id)
+);
+
+
+create table if not exists Collection_Track (
+    id serial primary key,
+    id_Track integer not null references Track(id),
+    id_Collection integer not null references Collection(id)
+);
+
 
 
 
