@@ -1,7 +1,7 @@
 create table if not exists Musician (
     id serial primary key,
-    name not null varchar(100) unique,
-    nickname varchar(100),
+    name  varchar(100) not null unique,
+    nickname varchar(100)
 );
 
 create table if not exists Album (
@@ -19,13 +19,13 @@ create table if not exists Track (
 
 create table if not exists Genre (
     id serial primary key,
-    name not null varchar(80)
+    name varchar(80) not null
 );
 
 create table if not exists Collection (
     id serial primary key,
-    data integer,
-    name varchar(100) not null,
+    name varchar(100) not null
+    data integer
 );
 
 create table if not exists Musician_Genre (
