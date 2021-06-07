@@ -120,6 +120,7 @@ VALUES (15, 8, 'Track_15', 2.7);
 INSERT INTO Track
 VALUES (16, 1, 'my Track_16', 3.0);
 
+
 INSERT INTO Collection
 VALUES (1, 'Collection_1', 2019);
 INSERT INTO Collection
