@@ -26,8 +26,8 @@ SELECT f.name FROM Musician f JOIN Musician_Album ma ON f.id = ma.id_Musician
 JOIN Track t ON t.id_Album = ma.id_Album
 WHERE duration_track IN (SELECT MIN(duration_track) FROM Track);
 
-SELECT a.name FROM Album a JOIN Track t ON a.id = t.id_Album
-WHERE id_Album  in (SELECT  id_Album   FROM Track GROUP BY id_Album having COUNT(id) = 1);
+SELECT Album.name, COUNT(Track.name) FROM Album  JOIN Track  ON Album.id = Track.id_Album
+GROUP BY Album.name ORDER BY COUNT(Track.name) ASC limit 2;
 
 
 
